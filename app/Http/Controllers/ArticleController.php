@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Article;
 use App\Models\Category;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\Auth;
@@ -28,6 +29,13 @@ class ArticleController extends Controller
         $articles = $category->articles()->orderby('created_at' , 'desc')->get();
         return view('article.by-category' , compact('category' , 'articles'));
     }
+
+    public function byUser(User $user)
+    {
+        $articles = $user->articles()->orderBy('created_at', 'desc')->get();
+        return view('article.by-user', compact('user', 'articles'));
+    }
+
 
     /**
      * Show the form for creating a new resource.
