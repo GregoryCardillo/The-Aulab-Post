@@ -2,7 +2,7 @@
     <div class="container-fluid p-5 bg-info text-center text-white">
         <div class="row justify-content-center">
             <h1 class="display-1">
-                Bentornato, Amministratore
+                Bentornato, Revisore
             </h1>
         </div>
     </div>
@@ -12,36 +12,27 @@
             {{ session('message') }}
         </div>
     @endif
-    @if ($errors->any())
-        <div class="alert alert-danger ">
-            <ul>
-                @foreach ($errors as $error)
-                    <li>{{ $error }}</li>
-                @endforeach
-            </ul>
-        </div>
-    @endif
         <div class="container my-5">
             <div class="row justify-content-center">
                 <div class="col-12">
-                    <h2>Richieste per ruolo amministatore</h2>
-                    <x-requests-table :roleRequests="$adminRequests" role="amministratore"/>
+                    <h2>Articoli da revisionare</h2>
+                    <x-articles-table :articles="$unrevisionedArticles"/>
                 </div>
             </div>
         </div>
         <div class="container my-5">
             <div class="row justify-content-center">
                 <div class="col-12">
-                    <h2>Richieste per ruolo revisore</h2>
-                    <x-requests-table :roleRequests="$revisorRequests" role="revisore"/>
+                    <h2>Articoli pubblicati</h2>
+                    <x-articles-table :articles="$acceptedArticles"/>
                 </div>
             </div>
         </div>
         <div class="container my-5">
             <div class="row justify-content-center">
                 <div class="col-12">
-                    <h2>Richieste per ruolo redattore</h2>
-                    <x-requests-table :roleRequests="$writerRequests" role="redattore"/>
+                    <h2>Articoli respinti</h2>
+                    <x-articles-table :articles="$rejectedArticles"/>
                 </div>
             </div>
         </div>
