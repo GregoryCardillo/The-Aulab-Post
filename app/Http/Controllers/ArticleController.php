@@ -13,7 +13,7 @@ class ArticleController extends Controller
 {
     public function __construct()
     {
-        $this->middleware('auth')->except('index' , 'show');
+        $this->middleware('auth')->except('index' , 'show' , 'articleSearch');
     }
     /**
      * Display a listing of the resource.
@@ -22,6 +22,13 @@ class ArticleController extends Controller
     {
         $articles = Article::where('is_accepted' , true)->orderBy('created_at' , 'desc')->get();
         return view('article.index' , compact('articles'));
+    }
+
+    public function articleSearch(Request $request){
+        $query = $request->input('query');
+        $articles = Article::search($query)->where('is_accepted' , true)->orderby('created_at' , 'desc')->get();
+
+        return view('article.search-index' , compact('articles' , 'query'));
     }
 
     public function byCategory(Category $category)
