@@ -18,7 +18,7 @@
             <td>
                 <form action="{{ route('admin.editTag' , ['tag' => $metaInfo]) }}" method="POST">
                     @csrf
-                    @method('put')
+                    @method('PUT')
                     <input type="text" name="name" placeholder="Nuovo nome tag" class="form-control w-50 d-inline ">
                     <button class="btn btn-info text-white" type="submit">Aggiorna</button>
                 </form>
@@ -26,28 +26,28 @@
             <td>
                 <form action="{{ route('admin.deleteTag' , ['tag' => $metaInfo]) }}" method="POST">
                     @csrf
-                    @method('delete')
+                    @method('DELETE')
                     <button class="btn btn-danger text-white" type="submit">Elimina</button>
                 </form>
             </td>
             @else
             <td>
-            <form action="{{ route('admin.editCategory' , ['category' => $metaInfo]) }}" method="POST">
-                @csrf
-                @method('put')
-                <input type="text" name="name" placeholder="Nuovo nome tag" class="form-control w-50 d-inline ">
-                <button class="btn btn-info text-white " type="submit" >Aggiorna</button>
-            </form>
-        </td>
-        <td>
-            <form action="{{ route('admin.deleteCategory' , ['category' => $metaInfo]) }}" method="POST">
-                @csrf
-                @method('delete')
-                <button class="btn btn-danger text-white" type="submit" >Elimina</button>
-            </form>
-        </td>
-        @endif
-    </tr>
-    @endforeach
-</tbody>
+                <form action="{{ route('admin.editCategory' , ['category' => $metaInfo]) }}" method="POST">
+                    @csrf
+                    @method('PUT')
+                    <input type="text" name="name" placeholder="Nuovo nome categoria" class="form-control w-50 d-inline ">
+                    <button class="btn btn-info text-white " type="submit">Aggiorna</button>
+                </form>
+            </td>
+            <td>
+                <form action="{{ route('admin.deleteCategory' , ['category' => $metaInfo]) }}" method="POST">
+                    @csrf
+                    @method('DELETE')
+                    <button class="btn btn-danger text-white" type="submit">Elimina</button>
+                </form>
+            </td>
+            @endif
+        </tr>
+        @endforeach
+    </tbody>
 </table>

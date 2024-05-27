@@ -10,17 +10,17 @@
         <div class="row justify-content-center">
             <div class="col-12 col-md-8">
                 @if ($errors->any())
-                    <div class="alert alert-danger">
-                        <ul>
-                            @foreach ($errors->all() as $error)
-                                <li>{{ $error }}</li>
-                            @endforeach
-                        </ul>
-                    </div>
+                <div class="alert alert-danger">
+                    <ul>
+                        @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                        @endforeach
+                    </ul>
+                </div>
                 @endif
                 <form action="{{ route('article.store') }}" method="post" class="card p-5 shadow" enctype="multipart/form-data">
                     @csrf
-
+                    
                     <div class="mb-3">
                         <label for="title" class="form-label">Titolo:</label>
                         <input type="text" name="title" class="form-control" id="title" value="{{ old('title') }}">
@@ -35,7 +35,7 @@
                     </div>
                     <div class="mb-3">
                         <label for="tags" class="form-label">Tags:</label>
-                        <input name="tags" class="form-control" id="tags" value="{{ old('tags')}}">
+                        <input name="tags" class="form-control" id="tags" value="{{ old('tags') }}">
                         <span class="small fst-italic ">Dividi ogni tag con una virgola</span>
                     </div>
                     <div class="mb-3">
@@ -53,7 +53,7 @@
                     <div class="mb-2 d-flex justify-content-center">
                         <button class="btn btn-info text-white">Inserisci un articolo</button>
                     </div>
-
+                    
                 </form>
             </div>
         </div>
