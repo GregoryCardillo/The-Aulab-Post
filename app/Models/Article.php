@@ -28,6 +28,7 @@ class Article extends Model
         return [
                 'id' => $this->id,
                 'title' => $this->title,
+                'subtitle' => $this->subtitle,
                 'body' => $this->body,
                 'category' => $this->category,
             ];

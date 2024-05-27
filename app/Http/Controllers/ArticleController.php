@@ -29,7 +29,6 @@ class ArticleController extends Controller
     public function articleSearch(Request $request){
         $query = $request->input('query');
         $articles = Article::search($query)->where('is_accepted' , true)->orderby('created_at' , 'desc')->get();
-        
         return view('article.search-index' , compact('articles' , 'query'));
     }
     
