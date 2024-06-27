@@ -1,3 +1,15 @@
+<h1>Full Stack Journal-Blog: </h1>
+A fully functional blog site with different Roles and Permissions 
+
+<h3>Demo:</h3>
+
+https://github.com/GregoryCardillo/The-Aulab-Post/assets/161600707/4f4e2423-2cb6-4634-9334-f74bf5acfe72
+
+<p>Final project for the Aulab Full Stack Developer bootcamp.</p>
+We used the Laravel Framework with PHP integrating the MYSQL Database for the Back-End. Instead for the Front-End we used Javascript and Bootstrap
+
+
+
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
 
 <p align="center">
